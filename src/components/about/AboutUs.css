@@ -1,0 +1,48 @@
+.about-us-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.aboutBackground img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.about-us-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin-right: 40%;
+}
+
+.about-us-title {
+  font-family: "Ephesis", cursive;
+  font-size: 60px;
+  color: #000;
+  padding-bottom: 10px;
+}
+
+.about-us-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #454444;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 50px;
+  margin-right: 45px;
+}
+

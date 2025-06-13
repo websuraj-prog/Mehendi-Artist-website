@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fce5d8;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.top-bar {
+  background-color: #fce5d8;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 30px;
+  font-size: 14px;
+  align-items: center;
+  color: #000;
+  font-weight: 500;
+}
+
+.bottum-bar{
+  background-color: #fce5d8;
+  padding: 15px;
+
+}
+
+.top-bar .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: -22px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  margin-top: -45px;
+  margin-left: 30px;
+}
+
+.social-icons a {
+  color: #000;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+}
+
+.contact-info i {
+  margin-right: 5px;
+}
+
+.top-bar .right i {
+  margin-right: 8px;
+}
+
+.top-bar .user {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #fce5d8;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  background-color: #b5423f;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #333;
+}
+
+.social-icons i {
+  margin: 0 8px;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hero-section {
+  position: relative;
+  background-color: #fce5d8;
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-img {
+  position: relative;
+}
+
+.hero-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -40px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 30%;
+  left: 75%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+  width: 90%;
+  max-width: 600px;
+  font-family: 'Cursive', sans-serif;
+}
+
+.hero-text h2 {
+  font-size: 40px;
+  color: #952626;
+  margin-bottom: 10px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 100;
+  font-family: "Eagle Lake", serif;
+}
+
+.enquire-btn {
+  background-color: #952626;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.enquire-btn:hover {
+  background-color: #a63a3a;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 20px;
+  left: 68%;
+  z-index: 10;
+}
+
+.hero-logo img {
+  max-width: 38%;
+}
