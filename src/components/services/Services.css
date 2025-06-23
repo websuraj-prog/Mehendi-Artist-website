@@ -63,3 +63,36 @@
 .enquire-btn:hover {
   background-color: #c56289;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 20px;
+  }
+  .services-title {
+    font-size: 40px;
+  }
+  .service-card {
+    max-width: 200px;
+    padding: 15px;
+  }
+  .service-card h3 {
+    font-size: 16px;
+  }
+  .service-card p {
+    font-size: 13px;
+  }
+  .enquire-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 30px;
+  }
+  .service-card {
+    max-width: 100%;
+  }
+}

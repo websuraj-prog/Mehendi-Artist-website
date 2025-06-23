@@ -22,17 +22,20 @@ const Gallery = () => {
     if (!selectedFile) return alert("Please select a file");
 
     const formData = new FormData();
-    formData.append("file", selectedFile);
-    formData.append("upload_preset", "Mehndi-images"); 
-    formData.append("cloud_name", "dpgyt0wsv"); 
+    formData.append("image", selectedFile);
 
     try {
       const res = await axios.post(
-        "https://api.cloudinary.com/v1_1/dpgyt0wsv/image/upload",
-        formData
+        "http://localhost:5000/upload",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
 
-      const newImageUrl = res.data.secure_url;
+      const newImageUrl = res.data.url;
       const updatedImages = [...images, { id: Date.now(), url: newImageUrl }];
       setImages(updatedImages);
       localStorage.setItem("mehendiImages", JSON.stringify(updatedImages));

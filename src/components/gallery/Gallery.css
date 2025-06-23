@@ -86,3 +86,37 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 20px 10px;
+  }
+  .gallery-title {
+    font-size: 40px;
+  }
+  .gallery-image {
+    width: 250px;
+    height: 280px;
+  }
+  .gallery-controls button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-title {
+    font-size: 30px;
+  }
+  .gallery-image {
+    width: 180px;
+    height: 200px;
+  }
+  .gallery-controls button {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin: 0 3px;
+  }
+}
