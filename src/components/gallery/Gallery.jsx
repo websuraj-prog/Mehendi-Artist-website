@@ -26,7 +26,7 @@ const Gallery = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/upload",
+"https://mehendi-artist-website.onrender.com/upload",
         formData,
         {
           headers: {
