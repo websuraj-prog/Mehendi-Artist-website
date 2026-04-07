@@ -124,6 +124,9 @@
   .footer-links ul {
     text-align: center;
   }
+  .footer-links p {
+    text-align: center;
+  }
   .social-icons2 {
     justify-content: center;
     margin: 10px 0;
@@ -131,6 +134,9 @@
   .footer-bottom {
     font-size: 12px;
   }
+  .connect h4 {
+    text-align: center;
+    margin-left: 0;
 }
 
 @media (max-width: 480px) {
