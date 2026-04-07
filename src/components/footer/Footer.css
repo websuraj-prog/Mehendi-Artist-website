@@ -138,6 +138,7 @@
     text-align: center;
     margin-left: 0;
 }
+}
 
 @media (max-width: 480px) {
   .map-section {
