@@ -63,6 +63,9 @@ app.post('/upload', upload.single('image'), async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+  app.get("/", (req, res) => {
+    res.send("Mehendi Artist API is running 🚀");
+  });
 
 // Start the server
 app.listen(PORT, () => {
