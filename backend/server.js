@@ -8,40 +8,54 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
 // middleware
 app.use(cors());
 app.use(express.json());
 
-// connect MongoDB Atlas
+
+// MongoDB connect
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("Connected to MongoDB Atlas"))
-.catch(err => console.log("MongoDB error:", err));
+.catch(err => console.log(err));
 
 
 // schema
 const imageSchema = new mongoose.Schema({
-  url: { type: String, required: true },
-  uploadedAt: { type: Date, default: Date.now }
+
+  url: String,
+
+  uploadedAt: {
+    type: Date,
+    default: Date.now
+  }
+
 });
 
 const Image = mongoose.model("Image", imageSchema);
 
 
-// multer config
+// multer
 const storage = multer.diskStorage({
+
   destination: function (req, file, cb) {
+
     cb(null, "uploads/");
+
   },
+
   filename: function (req, file, cb) {
-    const uniqueName = Date.now() + "-" + file.originalname;
-    cb(null, uniqueName);
+
+    cb(null, Date.now() + "-" + file.originalname);
+
   }
+
 });
 
 const upload = multer({ storage });
 
 
-// serve uploads folder
+// uploads folder serve
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 
@@ -50,29 +64,33 @@ app.post("/upload", upload.single("image"), async (req, res) => {
 
   try {
 
-    if (!req.file) {
-      return res.status(400).json({ message: "No file uploaded" });
-    }
-
-    const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+    const imageUrl =
+      req.protocol + "://" +
+      req.get("host") +
+      "/uploads/" +
+      req.file.filename;
 
     const newImage = new Image({
+
       url: imageUrl
+
     });
 
     await newImage.save();
 
     res.json({
-      message: "Image uploaded successfully",
+
+      message: "Image uploaded",
       url: imageUrl
+
     });
 
-  } catch (error) {
-
-    console.log(error);
+  } catch (err) {
 
     res.status(500).json({
-      message: "Server error"
+
+      message: "error"
+
     });
 
   }
@@ -80,19 +98,19 @@ app.post("/upload", upload.single("image"), async (req, res) => {
 });
 
 
-// =============================
-// serve React frontend
-// =============================
+// ===============================
+// serve Vite frontend (dist)
+// ===============================
 
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../dist")));
 
-app.get("/*", (req, res) => {
+app.get("/", (req, res) => {
 
   res.sendFile(
-    path.join(__dirname, "../frontend/dist/index.html")
+    path.join(__dirname, "../dist/index.html")
   );
 
-}); 
+});
 
 
 // start server
